@@ -1,9 +1,9 @@
 # MVC-LH; Cross-Environment
 
 reusing the same core application in different runtime environments by re-writing only the necessary pieces. 
-* _dev-console_: a basic mvclh application that adds two numbers.  it loads into the browser by "script" tag and can be called from the console.
-* _dom_: reuses controller, model & logic from "dev-console".  Has a new view & handler that connects to the DOM.
-* _node_: reuses controller, logic & view from "dev-console".  Has a new handler that reads from _process.argv_, and a model that reads and writes from a text file.
+* __dev-console__: a basic mvclh application that adds two numbers.  it loads into the browser by "script" tag and can be called from the console.
+* __dom__: reuses controller, model & logic from "dev-console".  Has a new view & handler that connects to the DOM.
+* __node__: reuses controller, logic & view from "dev-console".  Has a new handler that reads from _process.argv_, and a model that reads and writes from a text file.
 
 ___
 ___
