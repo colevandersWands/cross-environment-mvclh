@@ -6,7 +6,7 @@ let handler = {
         };
 
         if (typeof b !== 'number') {
-            throw new Error('invalid input: b must be a number');
+            b = undefined;
         };
 
         controller.add(a, b);
@@ -55,4 +55,3 @@ let view = {
     }
 };
 
-handler.add();

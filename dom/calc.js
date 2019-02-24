@@ -12,9 +12,12 @@ var handler = {
         var a; // to tell the difference between no number and 0
         var pre_a = document.getElementById("number1").value;
         if (pre_a == '') {
-            a = undefined; // try Number('') to see why I do this
+            throw new Error('invalid input: a must exist');
         } else {
             a = Number(pre_a);
+            if (isNaN(a)) {
+                throw new Error('invalid input: a must be a number');
+            };
         };
 
         var b;
@@ -23,18 +26,19 @@ var handler = {
             b = undefined;
         } else {
             b = Number(pre_b);
+            if (isNaN(b)) {
+                throw new Error('invalid input: b must be a number');
+            };
         }
  
         controller.add(a, b);
-
-        document.getElementById("number1").innerHTML = null;
-        document.getElementById("number2").innerHTML = null;
+        
     },
 };
 
 var controller = {
     add: function(a, b) {
-        var lastResult = model.getlastResult();
+        var lastResult = model.getLastResult();
         var result = logic.add(a, b, lastResult);
         model.setLastResult(result);
         view.render(result);
